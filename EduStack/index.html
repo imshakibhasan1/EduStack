@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduStack — Become a Full-Stack Developer</title>
+  <meta name="description" content="AI-powered full-stack web development learning platform. Master HTML, CSS, JavaScript, React, Node.js, MongoDB and more with your personal AI mentor." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+
+  <!-- ═══════════════ AUTH SCREEN ═══════════════ -->
+  <div id="auth-screen" class="auth-screen"></div>
+
+  <!-- ═══════════════ APP SHELL ═══════════════ -->
+  <div id="app-shell" class="app-shell hidden">
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+      <button id="sidebar-toggle" class="icon-btn" aria-label="Toggle sidebar">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="mobile-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">EduStack</span>
+      </div>
+      <button id="mobile-ai-btn" class="icon-btn ai-pulse" aria-label="Open AI Assistant">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </button>
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-inner">
+        <!-- Logo -->
+        <div class="sidebar-logo">
+          <div class="logo-mark">
+            <span>⚡</span>
+          </div>
+          <div class="logo-info">
+            <span class="logo-title">EduStack</span>
+            <span class="logo-sub">Full-Stack Program</span>
+          </div>
+          <button id="sidebar-close" class="icon-btn sidebar-close-btn" aria-label="Close sidebar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+
+        <!-- Student Card -->
+        <div id="sidebar-student-card" class="sidebar-student-card"></div>
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav">
+          <div class="nav-section-label">Main</div>
+          <a href="#dashboard" class="nav-item" data-view="dashboard" id="nav-dashboard">
+            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Dashboard
+          </a>
+          <a href="#profile" class="nav-item" data-view="profile" id="nav-profile">
+            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            My Profile
+          </a>
+
+          <div class="nav-section-label" style="margin-top:1rem">Curriculum</div>
+          <div id="sidebar-phases" class="sidebar-phases"></div>
+        </nav>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+          <a href="#settings" class="nav-item" data-view="settings" id="nav-settings">
+            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            Settings
+          </a>
+          <button id="logout-btn" class="nav-item nav-logout">
+            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Logout
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Sidebar Overlay -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+      <div id="view-container" class="view-container"></div>
+    </main>
+  </div>
+
+  <!-- ═══════════════ AI CHAT PANEL ═══════════════ -->
+  <div id="ai-chat-panel" class="ai-chat-panel hidden" role="dialog" aria-label="AI Assistant">
+    <div class="chat-header">
+      <div class="chat-header-left">
+        <div class="chat-ai-avatar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <div>
+          <div class="chat-title">AI Mentor</div>
+          <div class="chat-status"><span class="status-dot"></span> Online</div>
+        </div>
+      </div>
+      <div class="chat-header-actions">
+        <button id="chat-clear" class="icon-btn" title="Clear chat" aria-label="Clear chat">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+        </button>
+        <button id="chat-close" class="icon-btn" aria-label="Close chat">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Agent Tabs -->
+    <div class="agent-tabs">
+      <button class="agent-tab active" data-agent="auto" title="Auto-route to best agent">🤖 Auto</button>
+      <button class="agent-tab" data-agent="coding" title="Code writer & debugger">💻 Code</button>
+      <button class="agent-tab" data-agent="concept" title="Concept explainer">🧠 Learn</button>
+      <button class="agent-tab" data-agent="reviewer" title="Code reviewer">🔍 Review</button>
+      <button class="agent-tab" data-agent="project" title="Project builder">🧪 Project</button>
+      <button class="agent-tab" data-agent="coach" title="AI Coach">🎯 Coach</button>
+    </div>
+
+    <!-- Messages -->
+    <div id="chat-messages" class="chat-messages"></div>
+
+    <!-- Input -->
+    <div class="chat-input-area">
+      <div class="chat-input-wrapper">
+        <textarea
+          id="chat-input"
+          class="chat-input"
+          placeholder="Ask your AI mentor anything..."
+          rows="1"
+          aria-label="Message input"
+        ></textarea>
+        <button id="chat-send" class="chat-send-btn" aria-label="Send message">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+      <div id="current-agent-label" class="current-agent-label">Auto-routing to best agent</div>
+    </div>
+  </div>
+
+  <!-- AI Chat Toggle Button -->
+  <button id="ai-chat-toggle" class="ai-chat-toggle" aria-label="Open AI Mentor">
+    <div class="ai-toggle-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </div>
+    <div class="ai-toggle-pulse"></div>
+  </button>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts (order matters) -->
+  <script src="js/data/curriculum.js"></script>
+  <script src="js/data/lessons.js"></script>
+  <script src="js/core/auth.js"></script>
+  <script src="js/core/progress.js"></script>
+  <script src="js/core/router.js"></script>
+  <script src="js/agents/ai-agents.js"></script>
+  <script src="js/views/auth-view.js"></script>
+  <script src="js/views/dashboard-view.js"></script>
+  <script src="js/views/curriculum-view.js"></script>
+  <script src="js/views/profile-view.js"></script>
+  <script src="js/views/settings-view.js"></script>
+  <script src="js/views/lesson-view.js"></script>
+  <script src="js/views/chat-panel.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
