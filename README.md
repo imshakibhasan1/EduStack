@@ -4,11 +4,17 @@
 
 **Live App:** [imshakibhasan1.github.io/EduStack](https://imshakibhasan1.github.io/EduStack)
 
+### How to use 
+- At first open this link you can see a Login Form
+<img src="/img/01.png">
+- Then go to the Create Account, fill your data and <b>Start Learning Free</b> (no verification needed)
+<img src="/img/02.png">
+
 ---
 
 ## The Problem
 
-When I started learning web development (HTML, CSS, JS), a few months in I kept running into the same two issues:
+When I started learning web development (HTML, CSS, JS) After few months I faced two issues:
 
 - I had **no way to track my progress** across everything I'd learned.
 - I kept getting **confused about what to learn next**.
@@ -81,3 +87,5 @@ I'm a 3rd-year CSE student and freelance web developer, building EduStack as par
 ---
 
 If this project helps you or resonates with your own learning struggles, consider starring the repo.
+
+
