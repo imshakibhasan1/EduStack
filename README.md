@@ -87,4 +87,29 @@ I'm a 3rd-year CSE student and freelance web developer, building EduStack as par
 
 If this project helps you or resonates with your own learning struggles, consider starring the repo.
 
+--------
+### EduStack UI
+<ul>
+<li> Main Dashboard</li> <br>
+<img src="/img/UI/Edu-stack_main_deshboard.png" width="1920px" height="1080px">
+<br>
+<img src="/img/UI/Edu-stack_deshboard2.png" width="1920px" height="1080px">
+
+<li> My Profile (Track your Progress, achievements and learning journey)</li> <br>
+<img src="/img/UI/EduStack_user_profile.png" width="1920px" height="1080px">
+<br>
+<img src="/img/UI/EduStack_user_profile1.png" width="1920px" height="1080px">
+
+<li>11-Phase Full-Stack Development Roadmap (Phase 01)</li> <br>
+<img src="/img/UI/EduStack_phase.png" width="1920px" height="1080px">
+<br>
+
+<li>11-Phase Full-Stack Curriculum organized down to every specific Topic</li> <br>
+<img src="/img/UI/EduStack_Topic.png" width="1920px" height="1080px">
+<br>
+<li>After DOne every specific Topic here has a mini Exam (Quiz)</li> <br>
+<img src="/img/UI/EduStack_Topic-based_quizs.png" width="1920px" height="1080px">
+</ul>
+
+
 
