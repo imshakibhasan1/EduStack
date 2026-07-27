@@ -29,10 +29,12 @@ It's the tool I wished existed when I was learning — so I built it.
 ---
 ### How to use 
 **Live App:** [imshakibhasan1.github.io/EduStack](https://imshakibhasan1.github.io/EduStack)
-<li> At first open this link you can see a Login Form</li> <br>
-<img src="/img/01.png" width="1920px" height="1080px">
-<li> Then go to the Create Account, fill your data and <b>Start Learning Free</b> (no verification needed)</li> <br>
+<ol style="">
+  <li> At first open this link you can see a Login Form</li><hr>
+<img src="/img/01.png" width="1920px" height="1080px"> <br><br>
+  <li> Then go to the Create Account, fill your data and <b>Start Learning Free</b> (no verification needed)</li> <hr>
 <img src="/img/02.png" width="1920px" height="1080px">
+</ol>
 
 ## Tech Stack
 
@@ -89,27 +91,27 @@ If this project helps you or resonates with your own learning struggles, conside
 
 --------
 ### EduStack UI
-<ul>
-<li> Main Dashboard</li> <br>
+
+<b> Main Dashboard</b><hr>
 <img src="/img/UI/Edu-stack_main_deshboard.png" width="1920px" height="1080px">
-<br>
-<img src="/img/UI/Edu-stack_deshboard2.png" width="1920px" height="1080px">
+<img src="/img/UI/Edu-stack_deshboard2.png" width="1920px" height="1080px"><hr></br></br>
 
-<li> My Profile (Track your Progress, achievements and learning journey)</li> <br>
+
+<b> My Profile (Track your Progress, achievements and learning journey)</b><hr>
 <img src="/img/UI/EduStack_user_profile.png" width="1920px" height="1080px">
-<br>
-<img src="/img/UI/EduStack_user_profile1.png" width="1920px" height="1080px">
+<img src="/img/UI/EduStack_user_profile1.png" width="1920px" height="1080px"></br></br>
 
-<li>11-Phase Full-Stack Development Roadmap (Phase 01)</li> <br>
-<img src="/img/UI/EduStack_phase.png" width="1920px" height="1080px">
+<b> 11-Phase Full-Stack Development Roadmap (Phase 01) </b><hr>
+<img src="/img/UI/EduStack_phase.png" width="1920px" height="1080px"><hr>
 <br>
 
-<li>11-Phase Full-Stack Curriculum organized down to every specific Topic</li> <br>
-<img src="/img/UI/EduStack_Topic.png" width="1920px" height="1080px">
-<br>
-<li>After DOne every specific Topic here has a mini Exam (Quiz)</li> <br>
-<img src="/img/UI/EduStack_Topic-based_quizs.png" width="1920px" height="1080px">
-</ul>
+<b> 11-Phase Full-Stack Curriculum organized down to every specific Topic</b> <hr>
+<img src="/img/UI/EduStack_Topic.png" width="1920px" height="1080px"><hr>
+<br><br>
+
+<b> After Complete every specific Topic here has a mini Exam (Quiz)</b> <hr>
+<img src="/img/UI/EduStack_Topic-based_quizs.png" width="1920px" height="1080px"><hr>
+
 
 
 
