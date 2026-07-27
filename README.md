@@ -3,13 +3,6 @@
 **A self-guided, progress-tracking curriculum for learning MERN full-stack web development — from HTML basics to AI-powered development.**
 
 **Live App:** [imshakibhasan1.github.io/EduStack](https://imshakibhasan1.github.io/EduStack)
-
-### How to use 
-- At first open this link you can see a Login Form
-<img src="/img/01.png">
-- Then go to the Create Account, fill your data and <b>Start Learning Free</b> (no verification needed)
-<img src="/img/02.png">
-
 ---
 
 ## The Problem
@@ -34,6 +27,12 @@ EduStack is a structured, 11-phase full-stack curriculum (Web Foundations → HT
 It's the tool I wished existed when I was learning — so I built it.
 
 ---
+### How to use 
+**Live App:** [imshakibhasan1.github.io/EduStack](https://imshakibhasan1.github.io/EduStack)
+<li> At first open this link you can see a Login Form</li> <br>
+<img src="/img/01.png" width="1920px" height="1080px">
+<li> Then go to the Create Account, fill your data and <b>Start Learning Free</b> (no verification needed)</li> <br>
+<img src="/img/02.png" width="1920px" height="1080px">
 
 ## Tech Stack
 
