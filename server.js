@@ -1,3 +1,4 @@
+dotenv.config();
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -5,7 +6,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import aiRoutes from "./routes/ai.js";
 
-dotenv.config();
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -25,6 +26,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.listen(port, '0.0.0.0', () => {
+app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
