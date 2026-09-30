@@ -16,7 +16,7 @@ EduStack is a full-stack learning platform designed for beginner web developers.
 ## 📁 Directory & File Structure
 
 ```text
-edustack-backend/
+EduStack/
 ├── .env                    # Environment variables (NVIDIA_API_KEY, PORT)
 ├── .env.example            # Sample environment file template
 ├── package.json            # Node.js dependencies and script aliases
