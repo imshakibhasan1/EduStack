@@ -1,117 +1,175 @@
-# EduStack — Become a Full-Stack Developer
+# 🚀 EduStack — Full-Stack Developer Learning Platform
 
-**A self-guided, progress-tracking curriculum for learning MERN full-stack web development — from HTML basics to AI-powered development.**
-
-**Live App:** [imshakibhasan1.github.io/EduStack](https://imshakibhasan1.github.io/EduStack)
----
-
-## The Problem
-
-When I started learning web development (HTML, CSS, JS) After few months I faced two issues:
-
-- I had **no way to track my progress** across everything I'd learned.
-- I kept getting **confused about what to learn next**.
-
-There wasn't a single place that organized topics step by step *and* told me where I stood.
-
-## The Solution — EduStack
-
-EduStack is a structured, 11-phase full-stack curriculum (Web Foundations → HTML/CSS/Git → JavaScript → React → Next.js → Backend → AI-Powered Development) that:
-
-- Breaks the full MERN roadmap into **clear phases and topics**, so you always know what's next
-- **Tracks your progress** automatically — per topic, per phase, and overall
-- Gives you a **quiz after each module** to check real understanding, not just "I read it"
-- Awards **XP and achievements** to keep learning motivating
-- Includes an **AI module** (Gemini API) for interactive help while you learn
-
-It's the tool I wished existed when I was learning — so I built it.
+EduStack is a full-stack learning platform designed for beginner web developers. It combines interactive curriculum tracking with a multi-agent AI mentor powered by NVIDIA NIM (Meta Llama 3.2 11B Vision Instruct).
 
 ---
-### How to use 
-**Live App:** [imshakibhasan1.github.io/EduStack](https://imshakibhasan1.github.io/EduStack)
-<ol style="">
-  <li> At first open this link you can see a Login Form</li><hr>
-<img src="/img/01.png" width="1920px" height="1080px"> <br><br>
-  <li> Then go to the Create Account, fill your data and <b>Start Learning Free</b> (no verification needed)</li> <hr>
-<img src="/img/02.png" width="1920px" height="1080px">
-</ol>
 
-## Tech Stack
+## 📌 Project Overview
 
-Built with **plain front-end web technologies** — no framework overhead:
+- **Frontend**: Modular Vanilla JavaScript (SPA architecture), custom CSS design system, micro-animations, dynamic tab navigation, and responsive layouts.
+- **Backend**: Express.js server hosted on Node.js proxying requests securely to NVIDIA NIM APIs.
+- **AI Integration**: Multi-agent system featuring 6 specialized personas (Coding Assistant, Concept Explainer, Code Reviewer, Project Builder, AI Coach, and Auto-Router).
+- **Security**: API keys are isolated on the server (`.env`) and never exposed to client side.
 
-- **HTML5** — page structure
-- **CSS3** — styling
-- **Vanilla JavaScript (IIFE modules)** — behavior & DOM manipulation via browser APIs
-- **Hash-based routing** — single-page app navigation (`app.js`)
-- **Reusable view modules** — auth, dashboard, curriculum, lessons, profile, settings
-- **SVG icons** & **Google Fonts** — UI polish
-- **Gemini API** — AI-assisted learning integration
+---
 
-Built using **Google Antigravity**.
+## 📁 Directory & File Structure
 
-## Curriculum Content
-
-Lesson content is sourced and structured from freeCodeCamp, W3Schools, and other free learning platforms — organized and sequenced based on my own learning journey and best understanding as an intermediate-level learner (not an industry expert).
-
-Each lesson includes: title, tags, intro, section-by-section explanations, code examples, real-life analogies, video links, and quiz questions.
-
-## Project Structure
-
-```
-EduStack/
-├── js/
-│   ├── agents/        # AI integration (ai-agents.js)
-│   ├── core/           # auth.js, progress.js, router.js
-│   ├── data/           # curriculum.js, lessons.js
-│   └── views/           # auth, chat-panel, curriculum, dashboard, lesson, profile, settings
-├── app.js
-└── index.html
+```text
+edustack-backend/
+├── .env                    # Environment variables (NVIDIA_API_KEY, PORT)
+├── .env.example            # Sample environment file template
+├── package.json            # Node.js dependencies and script aliases
+├── server.js               # Express application entry point & static file server
+├── README.md               # Project documentation
+│
+├── routes/
+│   └── ai.js               # Backend route POST /api/ai/chat (NVIDIA NIM integration)
+│
+└── public/                 # Static assets served by Express
+    ├── index.html          # Main SPA single page container
+    ├── css/                # Custom CSS design system
+    ├── img/                # Static image assets
+    └── js/
+        ├── app.js          # Core application bootstrapper & event bindings
+        ├── ai-mentor.js    # AI mentor script initialization
+        ├── agents/
+        │   └── ai-agents.js# Client AI bridge, auto-router & history manager
+        ├── core/
+        │   ├── auth.js     # User session management & registration
+        │   ├── progress.js # XP points, streak tracking & topic completions
+        │   └── router.js   # Single-page client router
+        ├── data/
+        │   └── curriculum.js # Curriculum modules, phases, and learning topics
+        └── views/
+            ├── chat-panel.js   # AI Chat floating UI drawer & scroll management
+            ├── curriculum-view.js # Curriculum module listing and topic rendering
+            ├── dashboard-view.js  # Main student stats & progress dashboard
+            ├── profile-view.js    # Student profile management UI
+            └── settings-view.js   # Application preferences & theme settings
 ```
 
-## Features
+---
 
-- 11-phase full-stack roadmap with progress bars per topic
-- XP system, streaks, and achievement badges
-- Auto-graded quizzes per phase (70%+ pass threshold)
-- Weak-area tracking and quiz history
-- Personal profile with learning goal tracking
+## 📊 Data Schemas
+
+### 1. User Schema (`localStorage: devacademy_users`)
+```json
+{
+  "u_1727654400000": {
+    "id": "u_1727654400000",
+    "firstName": "Alex",
+    "lastName": "Developer",
+    "email": "alex@example.com",
+    "password": "hashed_or_plain_password",
+    "goal": "Become a Full-Stack Developer",
+    "avatar": "AD",
+    "joinedAt": "2026-09-30T04:00:00.000Z",
+    "lastSeen": "2026-09-30T06:00:00.000Z"
+  }
+}
+```
+
+### 2. User Progress Schema (`localStorage: devacademy_progress_<userId>`)
+```json
+{
+  "completedTopics": {
+    "web-foundations": [0, 1, 2],
+    "responsive-design": [0]
+  },
+  "quizScores": {
+    "web-foundations": {
+      "score": 5,
+      "total": 5,
+      "date": "2026-09-30T05:00:00.000Z"
+    }
+  },
+  "startedPhases": ["web-foundations", "responsive-design"],
+  "totalXP": 40,
+  "streak": 3,
+  "lastActivityDate": "2026-09-30"
+}
+```
+
+### 3. AI Chat History Schema (`localStorage: devacademy_chat_<userId>`)
+```json
+[
+  {
+    "role": "user",
+    "content": "What is an HTML element?",
+    "agent": "concept",
+    "timestamp": 1727654400000
+  },
+  {
+    "role": "assistant",
+    "content": "An HTML element is a building block of a web page...",
+    "agent": "concept",
+    "agentName": "🧠 Concept Explainer",
+    "timestamp": 1727654405000
+  }
+]
+```
+
+### 4. Backend AI Chat Payload (`POST /api/ai/chat`)
+```json
+// Request Body
+{
+  "message": "Explain async/await in JavaScript",
+  "agent": "concept"
+}
+
+// NVIDIA NIM API Payload (routes/ai.js)
+{
+  "model": "meta/llama-3.2-11b-vision-instruct",
+  "max_tokens": 400,
+  "stream": false,
+  "temperature": 0.7,
+  "top_p": 1,
+  "messages": [
+    { "role": "system", "content": "<SYSTEM_PROMPT_BY_AGENT>" },
+    { "role": "user", "content": "Explain async/await in JavaScript" }
+  ]
+}
+
+// Server Response
+{
+  "success": true,
+  "reply": "Async/await is a modern way to handle asynchronous code in JavaScript..."
+}
+```
 
 ---
 
-### About Me
+## 🛠️ Getting Started
 
-I'm a 3rd-year CSE student and freelance web developer, building EduStack as part of my own full-stack learning journey.
+### 1. Installation & Setup
+```bash
+# Install dependencies
+npm install
 
-[LinkedIn](https://www.linkedin.com/in/imshakibhasan1) · [GitHub](https://github.com/imshakibhasan1)
+# Create environment configuration
+cp .env.example .env
+```
+
+### 2. Environment Variables (`.env`)
+```env
+NVIDIA_API_KEY=nvapi-your-nvidia-api-key-here
+PORT=3000
+NODE_ENV=development
+```
+
+### 3. Running Server
+```bash
+# Start backend server
+npm start
+```
+Access application at `http://localhost:3000`.
 
 ---
 
-If this project helps you or resonates with your own learning struggles, consider starring the repo.
+## 🚀 Deployment (Hostinger / Production)
 
---------
-### EduStack UI
-
-<b> Main Dashboard</b><hr>
-<img src="/img/UI/Edu-stack_main_deshboard.png" width="1920px" height="1080px">
-<img src="/img/UI/Edu-stack_deshboard2.png" width="1920px" height="1080px"><hr></br></br>
-
-
-<b> My Profile (Track your Progress, achievements and learning journey)</b><hr>
-<img src="/img/UI/EduStack_user_profile.png" width="1920px" height="1080px">
-<img src="/img/UI/EduStack_user_profile1.png" width="1920px" height="1080px"></br></br>
-
-<b> 11-Phase Full-Stack Development Roadmap (Phase 01) </b><hr>
-<img src="/img/UI/EduStack_phase.png" width="1920px" height="1080px"><hr>
-<br>
-
-<b> 11-Phase Full-Stack Curriculum organized down to every specific Topic</b> <hr>
-<img src="/img/UI/EduStack_Topic.png" width="1920px" height="1080px"><hr>
-<br><br>
-
-<b> After Complete every specific Topic here has a mini Exam (Quiz)</b> <hr>
-<img src="/img/UI/EduStack_Topic-based_quizs.png" width="1920px" height="1080px"><hr>
-
-
-
-
+1. Rename `.env.example` to `.env` and configure `NVIDIA_API_KEY`.
+2. Add static web files into the `public/` folder.
+3. Configure environment variables (`NVIDIA_API_KEY`, `NODE_ENV=production`) in Hostinger panel.
+4. Deploy using Node.js app runner on Hostinger.
