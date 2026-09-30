@@ -53,11 +53,17 @@ const ChatPanel = (() => {
     const toggle = document.getElementById('ai-chat-toggle');
     if (panel) { panel.classList.remove('hidden'); }
     if (toggle) toggle.style.display = 'none';
+    
     // Show welcome if empty
     const msgs = document.getElementById('chat-messages');
     if (msgs && msgs.children.length === 0) renderWelcome();
+
+    // 🚀 Jump/Scroll to latest messages on open
+    scrollToBottom();
+
     setTimeout(() => { document.getElementById('chat-input')?.focus(); }, 100);
   }
+
 
   function close() {
     isOpen = false;
