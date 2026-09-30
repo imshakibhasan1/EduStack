@@ -3,7 +3,7 @@
 EduStack is a full-stack learning platform designed for beginner web developers. It combines interactive curriculum tracking with a multi-agent AI mentor powered by NVIDIA NIM (Meta Llama 3.2 11B Vision Instruct).
 
 ---
-#Live Url: https://edustack-1-bi1n.onrender.com/
+<b>Live Url:</b> https://edustack-1-bi1n.onrender.com/
 ## 📌 Project Overview
 
 - **Frontend**: Modular Vanilla JavaScript (SPA architecture), custom CSS design system, micro-animations, dynamic tab navigation, and responsive layouts.
